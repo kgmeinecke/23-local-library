@@ -7,12 +7,13 @@ function getTotalAccountsCount(accounts) {
 }
 
 function getBooksBorrowedCount(books) {
-  // YOUR SOLUTION HERE
+  const borrowedBooks = books.filter((book) => book.borrows.some((borrow) => borrow.returned === false));
+  return borrowedBooks.length;
   // Hint: You can use the [`filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method here. 
   // If you get stuck, feel free to take a look at this repl.it: https://replit.com/@thinkful/getBooksBorrowedCount#index.js
 }
 
-// Tbis is a helper function that's called by other functions inside this file. You don't have to edit it.
+// This is a helper function that's called by other functions inside this file. You don't have to edit it.
 function _sortObjectByValues(obj) {
   const keys = Object.keys(obj);
   return keys.sort((keyA, keyB) => {
